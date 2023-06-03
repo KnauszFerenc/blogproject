@@ -1,0 +1,5 @@
+@include('needable.head', ['title' => 'My Blogproject'])
+@include('moduls.menu')
+@include('moduls.hero', ['title' => 'My Blogproject'])
+@include('moduls.blogposts')
+@include('needable.footer')

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ route('home') }}/app.css" rel="stylesheet">
+  <script src="{{ route('home') }}/app.js"></script>
+  <title>Beállítások</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div class="flex flex-row flex-nowrap">
+        @include('admin.menu')
+        <section class="flex-grow">
+            <div class="p-10 bg-cyan-600 text-center text-white text-3xl">
+                <h1>Beállítások</h1>
+            </div>
+            <form id="oprionsForm" class="p-10">
+                @csfr
+                <div class="flex flex-row flex-wrap">
+                    <div class="max-w-sm">
+                        <fieldset class="flex flex-col p-3 border rounded mb-3">
+                            <legend>Alap adatok:</legend>
+                            <input class="border rounded mb-3" type="text" name="title" value="" placeholder="Oldal címe">
+                            <input type="text" class="border rounded mb-3" name="meta_author" value="" placeholder="Az oldal szerkesztője">
+                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása"></textarea>
+                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva"></textarea>
+                        </fieldset>
+                        <fieldset class="flex flex-col p-3 border rounded mb-3">
+                            <legend>Főoldal adatai:</legend>
+                            <label class="border rounded mb-3"><input type="checkbox" name="homepage" value="1">Lecseréli az eredeti főoldalt egy létező oldalra?</label>
+                            <div class="flex flex-col">
+                                <label class="border rounded mb-3">Főoldal:
+                                    <select name="statichomepage">
+                                    </select>
+                                </label>
+                                <input class="border rounded mb-3" type="text" name="news_slug" value="" placeholder="Hírek oldal aliasa/slugja">
+                                <label class="border rounded mb-3"><input type="checkbox" name="news_in_menu" value="1">Hírek oldal szerepeljen a menüben?</label>
+                                <label class="border rounded mb-3">Hírek menü pozíció<input type="number" name="news_place_in_menu" value="1"></label>
+                            </div>
+                            <div class="flex flex-col">
+                                <input class="border rounded mb-3" type="text" name="homepage_subtitle" value="" placeholder="Főoldal alcíme">
+                                <input class="border rounded mb-3" type="text" name="homepage_firstblock_title" value="" placeholder="Főoldal első blokk címe">
+                                <textarea class="border rounded mb-3" name="homepage_firstblock" placeholder="Főoldal első blokk szövege"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <input class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded mx-auto" type="submit" name="confirmation" value="Mentés">
+            </form>
+            <div id="message"></div>
+            <script>
+                document.getElementById('optionsForm').addEventListener('submit', function(event){
+                    event.preventDefault();
+                    var formData = new FormData(this);
+                    fetch('/save-data', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF_TOKEN': document.querySelector('meta[name="csfr-token"]').getAttribute('content'),
+                            'Accept': 'application/json',
+                        },
+                        body:FormData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('message').innerText = data.message;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            </script>
+        </section>
+    </div>
+</body>
+</html>
