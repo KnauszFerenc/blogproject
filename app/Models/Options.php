@@ -30,8 +30,8 @@ class Options extends Model
         $post = $this->where('option', $option)->first();
 
         if ($post) {
-            $post->update(['value' => $data]);
-            return $post;
+            $post->value = $data;
+            $post->save();
         } else {
             return $this->create(['option' => $option, 'value' => $data]);
         }
