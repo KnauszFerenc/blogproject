@@ -54,7 +54,7 @@
                 </div>
                 <div class="flex flex-col">
                     {{$priorityhtml}}
-                    <textarea name="post_excerpt" placeholder="Kivonat"></textaera>
+                    <textarea name="post_excerpt" placeholder="Kivonat"></textarea>
                     <div>
                         <p>Kiemelt kép</p>
                         <select name="post_picture">
