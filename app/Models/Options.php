@@ -31,6 +31,11 @@ class Options extends Model
         $post = $this->where('option_name', $option)->first();
 
         if ($post) {
+            if ($data === 'on') {
+                $data = 1;
+            } else {
+                $data = 0;
+            }
             $query = "UPDATE options SET option_value = ? WHERE option_name = ?";
             DB::update($query, [$data, $option]);
         } else {

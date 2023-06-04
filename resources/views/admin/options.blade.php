@@ -31,7 +31,7 @@
                         </fieldset>
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Főoldal adatai:</legend>
-                            <label class="border rounded mb-3"><input type="checkbox" name="homepage" value="1">Lecseréli az eredeti főoldalt egy létező oldalra?</label>
+                            <label class="border rounded mb-3"><input type="checkbox" name="homepageswitch" value="1">Lecseréli az eredeti főoldalt egy létező oldalra?</label>
                             <div class="flex flex-col">
                                 <label class="border rounded mb-3">Főoldal:
                                     <select name="statichomepage">
