@@ -30,7 +30,7 @@ class Options extends Model
             $post->update($data);
             return $post;
         } else {
-            return $this->create(['option' => $option] + $data);
+            return $this->create(['option' => $option], $data);
         }
     }
     public function getOption($option){
