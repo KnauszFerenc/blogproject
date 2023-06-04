@@ -1,5 +1,5 @@
 @php
-    $post_picture = 'http://127.0.0.1:8000/images/banner.jpg';
+    $post_picture = 'http://blogproject.smartista.hu/images/banner.jpg';
 @endphp
 <header style="background-image:url('{{$post_picture}}')" class="sdividerbottom bg-cover bg-fixed to-blue-500 container flex flex-col justify-center justify-items-center content-center min-w-full min-h-screen">
     <h1 style="text-shadow:0px 0px 5px rgba(0,0,0,0.5)" class="text-4xl font-black text-center text-white uppercase">{{$title}}</h1>
