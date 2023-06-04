@@ -15,8 +15,8 @@
             <div class="p-10 bg-cyan-600 text-center text-white text-3xl">
                 <h1>Beállítások</h1>
             </div>
-            <form id="oprionsForm" class="p-10">
-                @csfr
+            <form id="oprionsForm" class="p-10" method="POST" action="{{ route('home') }}/process/options">
+                @csrf
                 <div class="flex flex-row flex-wrap">
                     <div class="max-w-sm">
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
@@ -48,28 +48,11 @@
                 </div>
                 <input class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded mx-auto" type="submit" name="confirmation" value="Mentés">
             </form>
-            <div id="message"></div>
-            <script>
-                document.getElementById('optionsForm').addEventListener('submit', function(event){
-                    event.preventDefault();
-                    var formData = new FormData(this);
-                    fetch('/save-data', {
-                        method: 'POST',
-                        headers: {
-                            'X-CSRF_TOKEN': document.querySelector('meta[name="csfr-token"]').getAttribute('content'),
-                            'Accept': 'application/json',
-                        },
-                        body:FormData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('message').innerText = data.message;
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                });
-            </script>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         </section>
     </div>
 </body>

@@ -58,3 +58,5 @@ Route::get('/{slug}', function($slug) {
 use App\Http\Controllers\FormController;
 
 Route::post('/save-data', [FormController::class, 'saveData']);
+
+Route::post('/process/options', [OptionsController::class, 'process']);
