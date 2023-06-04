@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Options extends Model
 {
-    protected $fillable = ['option', 'value'];
+    protected $fillable = ['option_name', 'option_value'];
     protected $guarded = [];
 
     public function createOption($data)
@@ -18,9 +18,9 @@ class Options extends Model
 
     public function updateOption($option, $data)
     {
-        $post = $this->where('option', $option)->first();
+        $post = $this->where('option_name', $option)->first();
         if ($post) {
-            $post->update(['value' => $data]);
+            $post->update(['option_value' => $data]);
             return $post;
         }
         return null;
@@ -28,18 +28,18 @@ class Options extends Model
 
     public function saveOption($option, $data)
     {
-        $post = $this->where('option', $option)->first();
+        $post = $this->where('option_name', $option)->first();
 
         if ($post) {
-            $query = "UPDATE options SET value = '" . $data . "' WHERE option = '" . $option . "'";
+            $query = "UPDATE options SET option_value = $data WHERE option_name = $option";
             DB::update($query, [$data, $option]);
         } else {
-            return $this->create(['option' => $option, 'value' => $data]);
+            return $this->create(['option_name' => $option, 'option_value' => $data]);
         }
     }
 
     public function getOption($option)
     {
-        return $this->where('option', $option)->first();
+        return $this->where('option_name', $option)->first();
     }
 }
