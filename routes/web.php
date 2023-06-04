@@ -55,8 +55,6 @@ Route::get('/{slug}', function($slug) {
     }
 })->where('slug', '.*');
 
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\OptionsController;
 
-Route::post('/save-data', [FormController::class, 'saveData']);
-
-Route::post('/process/options', [OptionsController::class, 'process']);
+Route::post('/process/options', [OptionsController::class, 'process'])->name('options.process');
