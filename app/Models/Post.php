@@ -35,9 +35,9 @@ class Post extends Model
     public function savePost($id, $data)
     {
         if($id == 'new'){
-            createPost($data);
+            $this->createPost($data);
         } else {
-            updatePost($id, $data);
+            $this->updatePost($id, $data);
         }
     }
     public function getPostByTitleOrId($value){
