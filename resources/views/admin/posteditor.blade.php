@@ -52,7 +52,7 @@
                 <h1>{{$isitnew}} {{$typeis}} {{$isitnew2}}</h1>
             </div>
             <form class="p-10 flex flex-row flex-wrap h-full">
-                <div class="flex-grow flex flex-col pX-10 ">
+                <div class="flex-grow flex flex-col px-10 ">
                     <input class="border rounded mb-3" type="text" name="post_title" placeholder="Cím">
                     <input class="border rounded mb-3" type="text" name="slug" placeholder="slug/alias">
                     <input type="hidden" name="post_type" value="">
