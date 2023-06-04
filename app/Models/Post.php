@@ -32,6 +32,14 @@ class Post extends Model
         }
         return null;
     }
+    public function savePost($id, $data)
+    {
+        if($id == 'new'){
+            createPost($data);
+        } else {
+            updatePost($id, $data);
+        }
+    }
     public function getPostByTitleOrId($value){
         return $this->where('slug', $value)
                     ->first();

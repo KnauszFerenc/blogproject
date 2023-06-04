@@ -51,14 +51,15 @@
             <div class="p-10 bg-cyan-600 text-center text-white text-3xl">
                 <h1>{{$isitnew}} {{$typeis}} {{$isitnew2}}</h1>
             </div>
-            <form class="p-10 flex flex-row flex-wrap">
+            <form class="p-10 flex flex-row flex-wrap" action="{{ route('home') }}/process/post">
+                @csrf
                 <div class="flex-grow flex flex-col px-10 ">
-                    <input class="border rounded mb-3" type="text" name="post_title" placeholder="Cím">
-                    <input class="border rounded mb-3" type="text" name="slug" placeholder="slug/alias">
-                    <input type="hidden" name="post_type" value="">
-                    <input type="hidden" name="author" value="">
+                    <input class="border rounded mb-3" type="text" name="post_title" value="{{$post_title}}" placeholder="Cím">
+                    <input class="border rounded mb-3" type="text" name="slug" value="{{$slug}}" placeholder="slug/alias">
+                    <input type="hidden" name="post_type" value="{{$post_type}}">
+                    <input type="hidden" name="author" value="{{$author}}">
                     <input type="hidden" name="modified_by" value="">      
-                    <textarea class="border rounded mb-3 w-full h-4/5" name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
+                    <textarea class="border rounded mb-3 w-full h-4/5" name="post_body" placeholder="Bejegyzés tartalma">{{$post_body}}</textarea>              
                 </div>
                 <div class="w-2/5 flex flex-col">
                     <div class="rounded-xl shadow-md p-2">
@@ -71,7 +72,7 @@
                     </div>
                     {!! $priorityhtml !!}
                     <div class="rounded-xl shadow-md p-2">
-                        <textarea class="border rounded mb-3 w-full h-52" name="post_excerpt" placeholder="Kivonat"></textarea>
+                        <textarea class="border rounded mb-3 w-full h-52" name="post_excerpt" placeholder="Kivonat">{{$post_excerpt}}</textarea>
                     </div>
                     <div class="rounded-xl shadow-md p-2">
                         <p>Kiemelt kép</p>

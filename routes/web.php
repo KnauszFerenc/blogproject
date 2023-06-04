@@ -58,3 +58,7 @@ Route::get('/{slug}', function($slug) {
 use App\Http\Controllers\OptionsController;
 
 Route::post('/process/options', [OptionsController::class, 'process'])->name('options.process');
+
+use App\Http\Controllers\PostController;
+
+Route::post('/process/post', [PostController::class, 'process'])->name('post.process');
