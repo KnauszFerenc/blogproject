@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function process(Request $request)
     {
-        $data = $request->except('id');
+        $data = $request->except('id', 'confirmation');
         $id = $request->input('id');
         
         $postModel = new Post();
