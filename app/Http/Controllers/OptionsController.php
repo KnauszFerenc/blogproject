@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Options;
 
 class OptionsController extends Controller
 {
@@ -10,7 +11,7 @@ class OptionsController extends Controller
     {
         // Űrlap adatok feldolgozása
         $data = [];
-        $optionModel = new \App\Models\Options();
+        $optionModel = new Options();
         foreach ($request->all() as $name => $value) {
             // Az adatok name és value értékeinek mentése
             $optionModel->saveOption($name, $value);
