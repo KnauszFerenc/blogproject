@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{{ route('home') }}/app.css" rel="stylesheet">
   <script src="{{ route('home') }}/app.js"></script>
-  <title>Oldalak adminisztrációja</title>
+  <title>Cikkek adminisztrációja</title>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
                 <h1>Cikkek</h1>
             </div>
             <div class="p-10 flex flex-row justify-between">
-                <a href="{{ route('admin') }}/posteditor/?post_id=new&&post_type=post">Új hozzáadása</a>
+                <a href="{{ route('admin') }}/posteditor/?post_id=new&post_type=post">Új hozzáadása</a>
                 <input type="text" placeholder="Cikk címe...">
             </div>
             <div class="p-10">
