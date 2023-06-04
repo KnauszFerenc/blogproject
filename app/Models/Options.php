@@ -24,13 +24,14 @@ class Options extends Model
         }
         return null;
     }
-    public function saveOption($option, $data){
+    public function saveOption($option, $data)
+    {
         $post = $this->where('option', $option)->first();
-        if($post){
+        if ($post) {
             $post->update($data);
             return $post;
         } else {
-            return $this->create(['option' => $option], $data);
+            return $this->create($data);
         }
     }
     public function getOption($option){
