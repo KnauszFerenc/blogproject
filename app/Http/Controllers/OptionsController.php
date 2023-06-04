@@ -9,11 +9,9 @@ class OptionsController extends Controller
 {
     public function process(Request $request)
     {
-        // Űrlap adatok feldolgozása
         $data = [];
         $optionModel = new Options();
         foreach ($request->all() as $name => $value) {
-            // Az adatok name és value értékeinek mentése
             $optionModel->saveOption($name, $value);
         }
 
