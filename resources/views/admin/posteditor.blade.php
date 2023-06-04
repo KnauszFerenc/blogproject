@@ -81,7 +81,13 @@
                         </select>
                     </div>
                 </div>
+                <input class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded mx-auto" type="submit" name="confirmation" value="Mentés">
             </form>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         </section>
     </div>
 </body>
