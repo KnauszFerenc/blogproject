@@ -24,27 +24,27 @@
                     <div class="max-w-sm">
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Alap adatok:</legend>
-                            <input class="border rounded mb-3" type="text" name="title" value="{{$optionModel->getOption('title')->option_value}}" placeholder="Oldal címe">
-                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{$optionModel->getOption('meta_author')->option_value}}" placeholder="Az oldal szerkesztője">
-                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása">{{$optionModel->getOption('meta_description')->option_value}}</textarea>
-                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{$optionModel->getOption('meta_keywords')->option_value}}</textarea>
+                            <input class="border rounded mb-3" type="text" name="title" value="{{$optionModel->getOption('title') ? $optionModel->getOption('title')->option_value : ''}}" placeholder="Oldal címe">
+                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{$optionModel->getOption('meta_author') ? $optionModel->getOption('meta_author')->option_value : ''}}" placeholder="Az oldal szerkesztője">
+                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása">{{$optionModel->getOption('meta_description') ? $optionModel->getOption('meta_description')->option_value : ''}}</textarea>
+                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{$optionModel->getOption('meta_keywords') ? $optionModel->getOption('meta_keywords')->option_value : ''}}</textarea>
                         </fieldset>
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Főoldal adatai:</legend>
-                            <label class="border rounded mb-3"><input type="checkbox" name="homepageswitch" value="1" {{ $optionModel->getOption('news_in_menu')->option_value == 1 ? 'checked' : '' }}>Lecseréli az eredeti főoldalt egy létező oldalra?</label>
+                            <label class="border rounded mb-3"><input type="checkbox" name="homepageswitch" value="1" {{ $optionModel->getOption('homepageswitch') ? ($optionModel->getOption('homepageswitch')->option_value == 1 ? 'checked' : '') : '' }}>Lecseréli az eredeti főoldalt egy létező oldalra?</label>
                             <div class="flex flex-col">
                                 <label class="border rounded mb-3">Főoldal:
                                     <select name="statichomepage">
                                     </select>
                                 </label>
-                                <input class="border rounded mb-3" type="text" name="news_slug" value="{{$optionModel->getOption('meta_description')->option_value}}" placeholder="Hírek oldal aliasa/slugja">
-                                <label class="border rounded mb-3"><input type="checkbox" name="news_in_menu" value="1" {{ $optionModel->getOption('news_in_menu')->option_value == 1 ? 'checked' : '' }}>Hírek oldal szerepeljen a menüben?</label>
-                                <label class="border rounded mb-3">Hírek menü pozíció<input type="number" name="news_place_in_menu" value="{{$optionModel->getOption('news_place_in_menu')->option_value}}"></label>
+                                <input class="border rounded mb-3" type="text" name="news_slug" value="{{$optionModel->getOption('new_slug') ? $optionModel->getOption('news_slug')->option_value : ''}}" placeholder="Hírek oldal aliasa/slugja">
+                                <label class="border rounded mb-3"><input type="checkbox" name="news_in_menu" value="1" {{ $optionModel->getOption('news_in_menu') ? ($optionModel->getOption('news_in_menu')->option_value == 1 ? 'checked' : '') : '' }}>Hírek oldal szerepeljen a menüben?</label>
+                                <label class="border rounded mb-3">Hírek menü pozíció<input type="number" name="news_place_in_menu" value="{{$optionModel->getOption('news_place_in_menu') ? $optionModel->getOption('news_place_in_menu')->option_value : ''}}"></label>
                             </div>
                             <div class="flex flex-col">
-                                <input class="border rounded mb-3" type="text" name="homepage_subtitle" value="{{$optionModel->getOption('homepage_subtitle')->option_value}}" placeholder="Főoldal alcíme">
-                                <input class="border rounded mb-3" type="text" name="homepage_firstblock_title" value="{{$optionModel->getOption('homepage_firstblock_title')->option_value}}" placeholder="Főoldal első blokk címe">
-                                <textarea class="border rounded mb-3" name="homepage_firstblock" placeholder="Főoldal első blokk szövege">{{$optionModel->getOption('homepage_firstblock')->option_value}}</textarea>
+                                <input class="border rounded mb-3" type="text" name="homepage_subtitle" value="{{$optionModel->getOption('homepage_subtitle') ? $optionModel->getOption('homepage_subtitle')->option_value : ''}}" placeholder="Főoldal alcíme">
+                                <input class="border rounded mb-3" type="text" name="homepage_firstblock_title" value="{{$optionModel->getOption('homepage_firstblock_title') ? $optionModel->getOption('homepage_firstblock_title')->option_value : ''}}" placeholder="Főoldal első blokk címe">
+                                <textarea class="border rounded mb-3" name="homepage_firstblock" placeholder="Főoldal első blokk szövege">{{$optionModel->getOption('homepage_firstblock') ? $optionModel->getOption('homepage_firstblock')->option_value : ''}}</textarea>
                             </div>
                         </fieldset>
                     </div>
