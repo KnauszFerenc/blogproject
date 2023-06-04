@@ -37,7 +37,7 @@
                                     <select name="statichomepage">
                                     </select>
                                 </label>
-                                <input class="border rounded mb-3" type="text" name="news_slug" value="{{$optionModel->getOption('new_slug') ? $optionModel->getOption('news_slug')->option_value : ''}}" placeholder="Hírek oldal aliasa/slugja">
+                                <input class="border rounded mb-3" type="text" name="news_slug" value="{{$optionModel->getOption('news_slug') ? $optionModel->getOption('news_slug')->option_value : ''}}" placeholder="Hírek oldal aliasa/slugja">
                                 <label class="border rounded mb-3"><input type="checkbox" name="news_in_menu" value="1" {{ $optionModel->getOption('news_in_menu') ? ($optionModel->getOption('news_in_menu')->option_value == 1 ? 'checked' : '') : '' }}>Hírek oldal szerepeljen a menüben?</label>
                                 <label class="border rounded mb-3">Hírek menü pozíció<input type="number" name="news_place_in_menu" value="{{$optionModel->getOption('news_place_in_menu') ? $optionModel->getOption('news_place_in_menu')->option_value : ''}}"></label>
                             </div>
