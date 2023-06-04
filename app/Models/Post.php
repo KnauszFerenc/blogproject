@@ -36,4 +36,8 @@ class Post extends Model
         return $this->where('slug', $value)
                     ->first();
     }
+    public function getPostById($value){
+        return $this->where('ID', $value)
+                    ->first();
+    }
 }
