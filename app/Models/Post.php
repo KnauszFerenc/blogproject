@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
@@ -27,7 +28,8 @@ class Post extends Model
     public function updatePost($id, $data){
         $post = $this->find($id);
         if($post){
-            $post->update($data);
+            $query = "UPDATE posts SET post_type = ?, post_title = ?, post_excerpt = ?, slug = ?, author = ?, modified_by = ?, post_body = ?, status = ?, priority = ?, post_picture = ? WHERE id = ?";
+            DB::update($query, [$data['post_type'], $data['post_title'], $data['post_excerpt'], $data['slug'], $data['author'], $data['modified_by'], $data['post_body'], $data['status'], $data['priority'], $data['post_picture'], $id]);
             return $post;
         }
         return null;
