@@ -31,7 +31,7 @@ class Options extends Model
         $post = $this->where('option', $option)->first();
 
         if ($post) {
-            $query = "UPDATE options SET value = $data WHERE option = $option";
+            $query = "UPDATE options SET value = '" . $data . "' WHERE option = '" . $option . "'";
             DB::update($query, [$data, $option]);
         } else {
             return $this->create(['option' => $option, 'value' => $data]);
