@@ -21,10 +21,10 @@
                     <div class="max-w-sm">
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Alap adatok:</legend>
-                            <input class="border rounded mb-3" type="text" name="title" value="" placeholder="Oldal címe">
-                            <input type="text" class="border rounded mb-3" name="meta_author" value="" placeholder="Az oldal szerkesztője">
-                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása"></textarea>
-                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva"></textarea>
+                            <input class="border rounded mb-3" type="text" name="title" value="{{getOption('title')}}" placeholder="Oldal címe">
+                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{getOption('meta_author')}}" placeholder="Az oldal szerkesztője">
+                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása">{{getOption('meta_description')}}</textarea>
+                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{getOption('meta_keywords')}}</textarea>
                         </fieldset>
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Főoldal adatai:</legend>
