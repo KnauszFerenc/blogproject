@@ -9,7 +9,7 @@
     $post_excerpt = '';
     $post_picture = '';
     $priotity = '';
-    @if($ID != 'new')
+    if($ID != 'new'){
         $postModel = new \App\Models\Post();
         $post = $postModel->getPostById($ID);
         $post_title = $post->post_title;
@@ -20,11 +20,11 @@
         $post_excerpt = $post->post_excerpt;
         $post_picture = $post->post_picture;
         $priotity = $post->priotity;
-    @endif
+    }
     $priorityhtml = '<label>Kiemelt<input type="checkbox" name="priority" value="{{$$priotity}}"></label>';
-    @if($post_type == 'page')
-    $priorityhtml = '<label>Menüsorrend<input type="number" name="priority" value="{{$$priotity}}"></label><br>';
-    @endif
+    if($post_type == 'page'){
+        $priorityhtml = '<label>Menüsorrend<input type="number" name="priority" value="{{$$priotity}}"></label><br>';
+    }
 @endphp
 <!doctype html>
 <html>
