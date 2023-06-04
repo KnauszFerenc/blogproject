@@ -78,7 +78,7 @@
                     <div class="rounded-xl shadow-md p-2">
                         <p>Kiemelt kép</p>
                         <select class="border rounded mb-3" name="post_picture">
-
+                            <option value="">Válassz!</option>
                         </select>
                     </div>
                 </div>
