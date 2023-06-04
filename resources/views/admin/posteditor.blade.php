@@ -59,6 +59,7 @@
                     <input type="hidden" name="post_type" value="{{$post_type}}">
                     <input type="hidden" name="author" value="{{$author}}">
                     <input type="hidden" name="modified_by" value="">      
+                    <input type="hidden" name="id" value="{{$ID}}">      
                     <textarea class="border rounded mb-3 w-full h-4/5" name="post_body" placeholder="Bejegyzés tartalma">{{$post_body}}</textarea>              
                 </div>
                 <div class="w-2/5 flex flex-col">
