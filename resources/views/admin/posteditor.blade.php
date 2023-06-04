@@ -53,7 +53,7 @@
                     <textarea name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
                 </div>
                 <div class="flex flex-col">
-                    {{$priorityhtml}}
+                    {!! $priorityhtml !!}
                     <textarea name="post_excerpt" placeholder="Kivonat"></textarea>
                     <div>
                         <p>Kiemelt kép</p>
