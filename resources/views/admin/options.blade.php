@@ -24,10 +24,10 @@
                     <div class="max-w-sm">
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Alap adatok:</legend>
-                            <input class="border rounded mb-3" type="text" name="title" value="{{$optionModel->getOption('title')}}" placeholder="Oldal címe">
-                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{$optionModel->getOption('meta_author')}}" placeholder="Az oldal szerkesztője">
+                            <input class="border rounded mb-3" type="text" name="title" value="{{$optionModel->getOption('title')->value}}" placeholder="Oldal címe">
+                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{$optionModel->getOption('meta_author')->value}}" placeholder="Az oldal szerkesztője">
                             <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása">{{$optionModel->getOption('meta_description')->value}}</textarea>
-                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{$optionModel->getOption('meta_keywords')}}</textarea>
+                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{$optionModel->getOption('meta_keywords')->value}}</textarea>
                         </fieldset>
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Főoldal adatai:</legend>
