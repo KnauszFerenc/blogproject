@@ -19,7 +19,7 @@ class Options extends Model
     {
         $post = $this->where('option', $option)->first();
         if ($post) {
-            $post->update(['option' => $option, 'value' => $data]);
+            $post->update(['value' => $data]);
             return $post;
         }
         return null;
