@@ -1,6 +1,6 @@
 @php
     $post_type = $_GET['post_type'];
-    $ID = $_GET['id'];
+    $ID = $_GET['post_id'];
     $post_title = '';
     $author = '';
     $slug = '';
