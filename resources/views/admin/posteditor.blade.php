@@ -25,11 +25,11 @@
         $isitnew = "";
         $isitnew2 = "szerkesztése";
     }
-    $priorityhtml = '<label  class="border rounded mb-3">Kiemelt<input type="checkbox" name="priority" value="{{$priority}}"></label>';
+    $priorityhtml = '<div class="rounded-xl shadow-md p-2"><p>Kiemelt</p><input class="border rounded mb-3" type="checkbox" name="priority" value="{{$priority}}"></div>';
     $in_menu = '';
     $typeis = 'cikk';
     if($post_type == 'page'){
-        $priorityhtml = '<label  class="border rounded mb-3">Menüsorrend<input type="number" name="priority" value="{{$priority}}"></label><br>';
+        $priorityhtml = '<div class="rounded-xl shadow-md p-2"><p>Menüsorrend</p><input class="border rounded mb-3" type="number" name="priority" value="{{$priority}}"></div>';
         $typeis = 'oldal';
         $in_menu = '<option value="in_menu">Menüben közzétett</option>';
     }
@@ -60,15 +60,20 @@
                     <input type="hidden" name="modified_by" value="">      
                     <textarea name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
                 </div>
-                <div class="flex flex-col">
-                    <select name="status">
-                        <option value="draft">Vázlat</option>
-                        <option value="published">Közzétett</option>
-                        {!! $in_menu !!}
-                    </select>
+                <div class="w-1/5 flex flex-col">
+                    <div class="rounded-xl shadow-md p-2">
+                        <p>Állapot</p>
+                        <select class="border rounded mb-3" name="status">
+                            <option value="draft">Vázlat</option>
+                            <option value="published">Közzétett</option>
+                            {!! $in_menu !!}
+                        </select>
+                    </div>
                     {!! $priorityhtml !!}
-                    <textarea name="post_excerpt" placeholder="Kivonat"></textarea>
-                    <div>
+                    <div class="rounded-xl shadow-md p-2">
+                        <textarea name="post_excerpt" placeholder="Kivonat"></textarea>
+                    </div>
+                    <div class="rounded-xl shadow-md p-2">
                         <p>Kiemelt kép</p>
                         <select class="border rounded mb-3" name="post_picture">
 
