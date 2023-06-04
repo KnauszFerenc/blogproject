@@ -28,6 +28,10 @@ Route::get('/back_entry/pages', function () {
     return view('admin/pages');
 });
 
+Route::get('/back_entry/posteditor', function () {
+    return view('admin/posteditor');
+});
+
 Route::get('/back_entry/users', function () {
     return view('admin/users');
 });
