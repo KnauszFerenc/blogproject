@@ -8,6 +8,9 @@
   <title>Beállítások</title>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+@php 
+    $optionModel = new \App\Models\Options();
+@endphp
 <body>
     <div class="flex flex-row flex-nowrap">
         @include('admin.menu')
@@ -21,10 +24,10 @@
                     <div class="max-w-sm">
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Alap adatok:</legend>
-                            <input class="border rounded mb-3" type="text" name="title" value="{{getOption('title')}}" placeholder="Oldal címe">
-                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{getOption('meta_author')}}" placeholder="Az oldal szerkesztője">
-                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása">{{getOption('meta_description')}}</textarea>
-                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{getOption('meta_keywords')}}</textarea>
+                            <input class="border rounded mb-3" type="text" name="title" value="{{$optionModel->getOption('title')}}" placeholder="Oldal címe">
+                            <input type="text" class="border rounded mb-3" name="meta_author" value="{{$optionModel->getOption('meta_author')}}" placeholder="Az oldal szerkesztője">
+                            <textarea class="border rounded mb-3" name="meta_description" placeholder="Az oldal leírása">{{$optionModel->getOption('meta_description')}}</textarea>
+                            <textarea class="border rounded mb-3" name="meta_keywords" placeholder="Kulcsszavak vesszővel elválasztva">{{$optionModel->getOption('meta_keywords')}}</textarea>
                         </fieldset>
                         <fieldset class="flex flex-col p-3 border rounded mb-3">
                             <legend>Főoldal adatai:</legend>
