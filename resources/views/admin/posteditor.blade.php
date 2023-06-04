@@ -8,7 +8,7 @@
     $modified_by = '';
     $post_excerpt = '';
     $post_picture = '';
-    $priotity = '';
+    $priority = '';
     if($ID != 'new'){
         $postModel = new \App\Models\Post();
         $post = $postModel->getPostById($ID);
@@ -19,11 +19,11 @@
         $modified_by = $post->modified_by;
         $post_excerpt = $post->post_excerpt;
         $post_picture = $post->post_picture;
-        $priotity = $post->priotity;
+        $priority = $post->priotity;
     }
-    $priorityhtml = '<label>Kiemelt<input type="checkbox" name="priority" value="{{$$priotity}}"></label>';
+    $priorityhtml = '<label>Kiemelt<input type="checkbox" name="priority" value="{{$priority}}"></label>';
     if($post_type == 'page'){
-        $priorityhtml = '<label>Menüsorrend<input type="number" name="priority" value="{{$$priotity}}"></label><br>';
+        $priorityhtml = '<label>Menüsorrend<input type="number" name="priority" value="{{$priority}}"></label><br>';
     }
 @endphp
 <!doctype html>
@@ -53,7 +53,7 @@
                     <textarea name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
                 </div>
                 <div class="flex flex-col">
-                    {{$priority}}
+                    {{$priorityhtml}}
                     <textarea name="post_excerpt" placeholder="Kivonat"></textaera>
                     <div>
                         <p>Kiemelt kép</p>
