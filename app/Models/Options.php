@@ -7,23 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Options extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['option', 'value'];
+    protected $guarded = [];
 
-    ];
-    protected $guarded = [
-
-    ];
-    public function createOption($data){
+    public function createOption($data)
+    {
         return $this->create($data);
     }
-    public function updateOption($option, $data){
-        $post = $this->where('option', $option);
-        if($post){
+
+    public function updateOption($option, $data)
+    {
+        $post = $this->where('option', $option)->first();
+        if ($post) {
             $post->update($data);
             return $post;
         }
         return null;
     }
+
     public function saveOption($option, $data)
     {
         $post = $this->where('option', $option)->first();
@@ -34,8 +35,9 @@ class Options extends Model
             return $this->create(['option' => $option, 'value' => $data]);
         }
     }
-    public function getOption($option){
-        return $this->where('option', $option)
-                    ->first();
+
+    public function getOption($option)
+    {
+        return $this->where('option', $option)->first();
     }
 }
