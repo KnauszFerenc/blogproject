@@ -52,7 +52,7 @@
                 <h1>{{$isitnew}} {{$typeis}} {{$isitnew2}}</h1>
             </div>
             <form class="p-10 flex flex-row flex-wrap">
-                <div class="flex flex-col">
+                <div class="flex-grow flex flex-col">
                     <input class="border rounded mb-3" type="text" name="post_title" placeholder="Cím">
                     <input type="text" name="slug" placeholder="slug/alias">
                     <input type="hidden" name="post_type" value="">
@@ -60,7 +60,7 @@
                     <input type="hidden" name="modified_by" value="">      
                     <textarea name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
                 </div>
-                <div class="w-1/5 flex flex-col">
+                <div class="w-2/5 flex flex-col">
                     <div class="rounded-xl shadow-md p-2">
                         <p>Állapot</p>
                         <select class="border rounded mb-3" name="status">
