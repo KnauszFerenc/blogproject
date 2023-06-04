@@ -16,7 +16,7 @@
                 <h1>Oldalak</h1>
             </div>
             <div class="p-10 flex flex-row justify-between">
-                <a href="{{ route('admin') }}/back_entry/posteditor/?post_id=newpage">Új hozzáadása</a>
+                <a href="{{ route('admin') }}/back_entry/posteditor/?post_id=new&post_type=post">Új hozzáadása</a>
                 <input type="text" placeholder="Oldal címe...">
             </div>
             <div class="p-10">

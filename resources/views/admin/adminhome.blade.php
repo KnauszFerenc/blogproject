@@ -32,7 +32,7 @@
                             $counter++;
                         @endphp
                     @endforeach
-                    <p class="mt-3 rounded-3xl bg-cyan-500 hover:bg-cyan-600 text-center px-4 py-2 text-white w-fit"><a href="{{route('admin')}}/post/new">Új hozzáadása</a></p>
+                    <p class="mt-3 rounded-3xl bg-cyan-500 hover:bg-cyan-600 text-center px-4 py-2 text-white w-fit"><a href="{{ route('admin') }}/back_entry/posteditor/?post_id=new&&post_type=post">Új hozzáadása</a></p>
                 </div>
             </div>
         </section>
