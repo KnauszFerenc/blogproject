@@ -10,14 +10,12 @@ class OptionsController extends Controller
     {
         // Űrlap adatok feldolgozása
         $data = [];
-
+        $optionModel = new \App\Models\Options();
         foreach ($request->all() as $name => $value) {
             // Az adatok name és value értékeinek mentése
-            $data[] = [
-                'name' => $name,
-                'value' => $value,
-            ];
+            $optionModel->saveOption($name, $value);
         }
+
         return redirect()->back()->with('success', 'Az adatok elmentve');
     }
 }
