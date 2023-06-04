@@ -51,14 +51,14 @@
             <div class="p-10 bg-cyan-600 text-center text-white text-3xl">
                 <h1>{{$isitnew}} {{$typeis}} {{$isitnew2}}</h1>
             </div>
-            <form class="p-10 flex flex-row flex-wrap">
+            <form class="p-10 flex flex-row flex-wrap h-full">
                 <div class="flex-grow flex flex-col">
                     <input class="border rounded mb-3" type="text" name="post_title" placeholder="Cím">
-                    <input type="text" name="slug" placeholder="slug/alias">
+                    <input class="border rounded mb-3" type="text" name="slug" placeholder="slug/alias">
                     <input type="hidden" name="post_type" value="">
                     <input type="hidden" name="author" value="">
                     <input type="hidden" name="modified_by" value="">      
-                    <textarea name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
+                    <textarea class="border rounded mb-3 w-full h-4/5" name="post_body" placeholder="Bejegyzés tartalma"></textarea>              
                 </div>
                 <div class="w-2/5 flex flex-col">
                     <div class="rounded-xl shadow-md p-2">
@@ -71,7 +71,7 @@
                     </div>
                     {!! $priorityhtml !!}
                     <div class="rounded-xl shadow-md p-2">
-                        <textarea name="post_excerpt" placeholder="Kivonat"></textarea>
+                        <textarea class="border rounded mb-3 w-full h-52" name="post_excerpt" placeholder="Kivonat"></textarea>
                     </div>
                     <div class="rounded-xl shadow-md p-2">
                         <p>Kiemelt kép</p>

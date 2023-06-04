@@ -681,6 +681,14 @@ video {
   height: 100%;
 }
 
+.h-4\/5 {
+  height: 80%;
+}
+
+.h-52 {
+  height: 13rem;
+}
+
 .max-h-14 {
   max-height: 3.5rem;
 }
