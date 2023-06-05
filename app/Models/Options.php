@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class Options extends Model
 {
-    protected $fillable = ['option_name', 'option_value'];
+    //protected $fillable = ['option_name', 'option_value'];
     protected $guarded = [];
-
+    protected $table = 'options';
     public function createOption($data)
     {
         return $this->create($data);
@@ -20,7 +20,6 @@ class Options extends Model
     {
         $post = $this->where('option_name', $option)->first();
         if ($post) {
-            dd($option);
             $post->update(['option_value' => $data]);
             return $post;
         }
@@ -32,7 +31,6 @@ class Options extends Model
         $post = $this->where('option_name', $option)->first();
 
         if ($post) {
-            dd($option);
             $post->update(['option_value' => $data]);
             return $post;
         } else {

@@ -45,15 +45,13 @@ Route::get('/back_entry/options', function () {
 });
 
 Route::get('/{slug}', function($slug) {
-    if(!empty($slug) && !preg_match('/^post\//', $slug)){
         return view('page', compact('slug'));
-    } elseif (!empty($slug) && preg_match('/^post\//', $slug)){
-        $slug = str_replace('post/', '', $slug);
-        return view('single', compact('slug'));
-    } else {
-        return view('homepage');
-    }
 })->where('slug', '.*');
+
+Route::get('/post/{slug}', function($slug) {
+    $slug = str_replace('post/', '', $slug);
+    return view('single', compact('slug'));
+});
 
 use App\Http\Controllers\OptionsController;
 

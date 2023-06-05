@@ -20,6 +20,7 @@ class OptionsController extends Controller
         foreach ($request->all() as $name => $value) {
             $optionModel->saveOption($name, $value);
         }
+        
 
         return redirect()->back()->with('success', 'Az adatok elmentve');
     }
