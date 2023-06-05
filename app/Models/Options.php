@@ -20,6 +20,7 @@ class Options extends Model
     {
         $post = $this->where('option_name', $option)->first();
         if ($post) {
+            dd($option);
             $post->update(['option_value' => $data]);
             return $post;
         }
@@ -31,8 +32,9 @@ class Options extends Model
         $post = $this->where('option_name', $option)->first();
 
         if ($post) {
-            $query = "UPDATE options SET option_value = ? WHERE option_name = ?";
-            DB::update($query, [$data, $option]);
+            dd($option);
+            $post->update(['option_value' => $data]);
+            return $post;
         } else {
             return $this->create(['option_name' => $option, 'option_value' => $data]);
         }
