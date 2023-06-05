@@ -28,8 +28,7 @@ class Post extends Model
     public function updatePost($id, $data){
         $post = $this->find($id);
         if($post){
-            $query = "UPDATE posts SET post_type = ?, post_title = ?, post_excerpt = ?, slug = ?, author = ?, modified_by = ?, post_body = ?, status = ?, priority = ?, post_picture = ? WHERE id = ?";
-            DB::update($query, [$data['post_type'], $data['post_title'], $data['post_excerpt'], $data['slug'], $data['author'], $data['modified_by'], $data['post_body'], $data['status'], $data['priority'], $data['post_picture'], $id]);
+            $post->update($data);
             return $post;
         }
         return null;
