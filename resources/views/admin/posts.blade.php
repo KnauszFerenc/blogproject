@@ -33,7 +33,7 @@
                         <p class="flex-grow px-10">{{$post->post_title}}</p>
                         <p class="mx-3">Státusz: {{$post->status}}</p>
                         <a class="mx-3" target="_blank" href="{{route('home')}}/post/{{$post->slug}}">Megtekint</a>
-                        <a class="mx-3" href="{{ route('admin') }}/posteditor/?post_id={{ $post->ID }}&post_type=post">Szerkeszt</a>
+                        <a class="mx-3" href="{{ route('admin') }}/posteditor/?post_id={{ $post->id }}&post_type=post">Szerkeszt</a>
                         <button>Töröl</button>
                     </div>
                 @endforeach
